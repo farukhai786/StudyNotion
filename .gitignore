@@ -1,1 +1,9 @@
-node_modules
+node_modules/
+.env
+dist/
+build/
+.vscode/
+client/node_modules/
+client/.env
+backend/node_modules/
+backend/.env
