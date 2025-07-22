@@ -6,7 +6,7 @@ const SubSection = require("../Models/SubSection")
 const { uploadToCloudinary } = require("../Utils/imageUploader");
 const CourseProgress = require ("../Models/courseProgres")
 const ExpressError = require("../Utils/ExpressError");
-const { convertSecondsToDuration } = require("../utils/time");
+const { convertSecondsToDuration } = require("../Utils/time");
 
 
 
