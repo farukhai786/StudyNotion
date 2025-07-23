@@ -13,7 +13,6 @@ const { convertSecondsToDuration } = require("../Utils/time");
 
 
 exports.createCourse = async (req, res) => {
- 
     const {
       courseName,
       courseDescription,

@@ -1,4 +1,4 @@
-// utils/time.js
+
 
 function convertSecondsToDuration(seconds) {
   const hours = Math.floor(seconds / 3600);

@@ -20,7 +20,7 @@ console.log("🔍 RAZORPAY_KEY_ID:", process.env.RAZORPAY_KEY_ID);
 console.log("🔍 RAZORPAY_SECRET:", process.env.RAZORPAY_SECRET);
 console.log("⚡ API routes mounted at /api/v1");
   dotenv.config();
- const PORT =  4000;
+ const PORT =  process.env.PORT || 4000;
 
 database.connect();
 
