@@ -1,6 +1,6 @@
 import React from "react"
 import { useForm } from "react-hook-form"
-import {countryCodes} from "../../../data/CountryCode"
+import countryCodes from "../../../data/CountryCode"
 const ContactForm = () => {
   const {
     register,
