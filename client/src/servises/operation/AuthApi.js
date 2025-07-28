@@ -117,6 +117,7 @@ export function login(email, password, navigate) {
 
       if (!response.data.success) {
         throw new Error(response.data.message || "Login Failed");
+        
       }
 
       toast.success("Login Successful");
@@ -125,12 +126,7 @@ export function login(email, password, navigate) {
       const user = response.data.user;
        
       
-   if (!user) {
-       
-        toast.error("User not registered");
-        navigate("/signup"); 
-        return;
-      }
+  
 
       const userImage = user?.image
         ? user.image
