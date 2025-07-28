@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../../../servises/operation/AuthApi"; // ✅ सही path लगाओ
+import { login } from "../../../servises/operation/AuthApi";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const LoginForm = () => {
       onSubmit={submitHandler}
       className="flex flex-col w-full gap-y-4 mt-6"
     >
-      {/* Email */}
+   
       <label className="w-full">
         <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
           Email Address <sup className="text-pink-200">*</sup>
@@ -56,7 +56,7 @@ const LoginForm = () => {
         />
       </label>
 
-      {/* Password */}
+    
       <label className="w-full relative">
         <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
           Password <sup className="text-pink-200">*</sup>
@@ -81,14 +81,14 @@ const LoginForm = () => {
           )}
         </span>
 
-        {/* Forgot Password */}
+     
         <Link to="/forget-password" className="block mt-1">
           <p className="text-xs text-blue-100 text-right">Forget Password?</p>
         </Link>
       </label>
 
-      {/* Submit Button */}
-      <button className="bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-medium text-[#000814] cursor-pointer">
+ 
+      <button className="  bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-medium text-[#000814] cursor-pointer">
         Sign in
       </button>
     </form>
@@ -96,3 +96,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
