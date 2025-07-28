@@ -16,17 +16,17 @@ export default function CodeBlock({
   className={`flex flex-col-reverse lg:flex-row ${position} my-20 items-center justify-center gap-10 w-11/12 mx-auto`}
 >
 
-  <div className="w-full lg:w-1/2 flex flex-col gap-5 text-center lg:text-left">
+  <div className=" w-full lg:w-1/2 flex flex-col gap-5 text-center lg:text-left">
     {heading}
 
-    <p className="font-medium text-sm sm:text-base leading-6 tracking-normal text-[#838894] max-w-[486px] mx-auto lg:mx-0">
+    <p className="font-medium text-sm sm:text-base leading-6 tracking-normal text-[#838894] lg:w-[486px] sm:w-[600px] mx-auto lg:mx-0">
       {subHeading}
     </p>
 
 
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 justify-center lg:justify-start">
       <CTAButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
-        <div className="flex gap-2 items-center justify-center">
+        <div className="flex gap-2 items-center justify-center ">
           {ctabtn1.btnText}
           <FaArrowRightLong />
         </div>
@@ -50,7 +50,7 @@ export default function CodeBlock({
 
    
       <div
-        className={`flex-1 flex flex-col gap-1 font-mono font-light leading-[20px] tracking-normal ${codeColor} pr-2 text-left break-words`}
+        className={`flex-1 flex lg:flex-col gap-1 text-[10px] leading-[16px] font-mono tracking-normal ${codeColor} pr-2 text-left break-words text-sm`}
       >
         <TypeAnimation
           sequence={[BlockCode, 10000, ""]}
@@ -60,6 +60,7 @@ export default function CodeBlock({
             whiteSpace: "pre-line",
             display: "block",
             height: "100%",
+            
           }}
         />
       </div>
