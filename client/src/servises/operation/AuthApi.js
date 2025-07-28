@@ -123,10 +123,12 @@ export function login(email, password, navigate) {
 
       const token = response.data.token;
       const user = response.data.user;
-
+       
       
-      if (!user) {
+   if (!user) {
+       
         toast.error("User not registered");
+        navigate("/signup"); 
         return;
       }
 
