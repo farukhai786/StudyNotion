@@ -28,20 +28,16 @@ app.use(express.json());
 app.use(express.urlencoded({ limit: '1gb', extended: true }));
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow only requests from the frontend (Vercel and local)
-      const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173"];
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,  // Allow cookies/authorization headers
-  })
-);
+origin: function (origin, callback) {
+  console.log("Origin:", origin); // देखिए कौन सा URL आ रहा है
+  const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173"];
+  if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    callback(null, true);
+  } else {
+    callback(new Error('Not allowed by CORS'));
+  }
+}
+
   
 // app.use(
 //     fileUpload({
