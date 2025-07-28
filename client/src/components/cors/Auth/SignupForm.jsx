@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { sendOtp } from "../../../servises/operation/AuthApi"; // ✅ Import sendOtp
+import { sendOtp } from "../../../servises/operation/AuthApi"; 
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const submitHandler = async (e) => {
     accountType,
   };
 
-  // ✅ Send all data into sendOtp
+  
   dispatch(sendOtp(formData.email, navigate, dataToStore));
 };
 
@@ -50,7 +50,7 @@ const submitHandler = async (e) => {
 
   return (
     <div>
-      {/* Toggle Student / Instructor */}
+      
       <div className="flex bg-[#161D29] p-1 gap-x-1 rounded-full max-w-max">
         <button
           onClick={() => setAccountType("Student")}
@@ -74,10 +74,10 @@ const submitHandler = async (e) => {
         </button>
       </div>
 
-      {/* Form Start */}
+      
       <form onSubmit={submitHandler} className="mt-6 space-y-4">
-        <div className="flex gap-x-4">
-          {/* First Name */}
+        <div className="flex lg:flex-row  flex-col gap-x-4 gap-y-4">
+         
           <label className="w-full">
             <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
               First Name <sup className="text-pink-200">*</sup>
@@ -93,7 +93,7 @@ const submitHandler = async (e) => {
             />
           </label>
 
-          {/* Last Name */}
+         
           <label className="w-full">
             <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
               Last Name <sup className="text-pink-200">*</sup>
@@ -110,9 +110,9 @@ const submitHandler = async (e) => {
           </label>
         </div>
 
-        {/* Email Field */}
+      
         <label className="w-full">
-          <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
+          <p className="text-[0.875rem] text-[#F1F2FF] mb-3 leading-[1.375rem]">
             Email Address <sup className="text-pink-200">*</sup>
           </p>
           <input
@@ -126,9 +126,9 @@ const submitHandler = async (e) => {
           />
         </label>
 
-        {/* Password Fields */}
-        <div className="flex gap-x-4">
-          {/* Create Password */}
+       
+        <div className="flex lg:flex-row  flex-col gap-x-4 gap-y-4">
+       
           <label className="w-full relative">
             <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
               Create Password <sup className="text-pink-200">*</sup>
@@ -154,7 +154,7 @@ const submitHandler = async (e) => {
             </span>
           </label>
 
-          {/* Confirm Password */}
+       
           <label className="w-full relative">
             <p className="text-[0.875rem] text-[#F1F2FF] mb-1 leading-[1.375rem]">
               Confirm Password <sup className="text-pink-200">*</sup>
@@ -181,7 +181,6 @@ const submitHandler = async (e) => {
           </label>
         </div>
 
-        {/* Submit Button */}
         <button className="bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-medium text-[#000814] w-full cursor-pointer">
           Create Account
         </button>
