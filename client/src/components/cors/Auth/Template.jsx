@@ -6,7 +6,15 @@ import { FcGoogle } from "react-icons/fc";
 
 const Template = ({ title, desc1, desc2, image, formType, }) => {
   return (
-    <div className="flex w-11/12 max-w-[1160px] py-12 mx-auto gap-y-0 gap-x-12 justify-between">
+import React from "react";
+ import frame from "../../../assets/Frame 23.png";
+import SignupForm from "../Auth/SignupForm.jsx";
+import LoginForm from "../Auth/LoginForm.jsx";
+import { FcGoogle } from "react-icons/fc";
+
+const Template = ({ title, desc1, desc2, image, formType, }) => {
+  return (
+    <div className="flex w-9/12 flex-col-reverse lg:flex-row py-12 mx-auto gap-y-0 gap-x-12 justify-between">
       <div className="w-11/12 max-w-[450px] mx-0 text-white">
         <h1 className="text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]">{title}</h1>
         <p className="text-[1.125rem] mt-4 leading-[1.625rem]">
@@ -28,14 +36,14 @@ const Template = ({ title, desc1, desc2, image, formType, }) => {
         </button>
       </div>
 
-      <div className="relative w-11/12 max-w-[450px]">
+      <div className="relative w-11/12 lg:max-w-[450px]">
         <img
           src={frame}
           alt="patter"
           width={558}
           height={504}
           loading="lazy"
-          className="w-[558px] h-[504px]"
+          className="w-[558px] lg:h-[504px]"
         />
          <img
            src={image}
@@ -49,3 +57,4 @@ const Template = ({ title, desc1, desc2, image, formType, }) => {
 };
 
 export default Template;
+
