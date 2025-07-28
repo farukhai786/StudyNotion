@@ -25,6 +25,7 @@ database.connect();
 app.use(express.json());
 app.use(express.urlencoded({ limit: '1gb', extended: true }));
 app.use(cookieParser());
+console.log("Frontend URL:", process.env.FRONTEND_URL);  // यह कंसोल में सही URL प्रिंट करेगा
 
 // CORS सेटिंग्स को सही तरीके से सेट करें
 app.use(
