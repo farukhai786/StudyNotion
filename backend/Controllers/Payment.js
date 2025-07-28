@@ -20,7 +20,8 @@ exports.capturePayment = async (req, res) => {
   let totalAmount = 0;
 
   for (const id of courses) {
-    const course = await Course.findById(id);
+    const course = await Course.findById
+(id);
     if (!course) throw new ExpressError(404, `Course not found: ${id}`);
 
     if (course.studentsEnrolled.includes(userId)) {
