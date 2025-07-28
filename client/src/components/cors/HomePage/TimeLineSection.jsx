@@ -1,10 +1,11 @@
 import Logo1 from "../../../assets/Logo1.png";
 import Logo2 from "../../../assets/Logo2.png";
 import Logo3 from "../../../assets/Logo3.png";
-import TimeLineSectionVideo from "../../../assets/production ID_4498202.mp4"
+import TimeLineSectionVideo from "../../../assets/production ID_4498202.mp4";
+
 const timeline = [
   {
-    Logo: Logo1, 
+    Logo: Logo1,
     heading: "Leadership",
     Description: "Fully committed to the success company",
   },
@@ -25,58 +26,66 @@ const timeline = [
   },
 ];
 
-
 export default function TimeLineSection() {
   return (
-    <div>
-          <div className="w-10/12 flex flex-row justify-between  mx-auto mt-10">
+    <div className="w-11/12 mx-auto my-10">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+        
+   
+        <div className="flex flex-col gap-6 w-full lg:w-[410px]">
+          {timeline.map((element, index) => (
+            <div className="flex gap-4 items-start" key={index}>
+              <div className="w-[50px] h-[50px] bg-white flex items-center justify-center rounded-md shrink-0">
+                <img src={element.Logo} alt="logo" className="w-6 h-6" />
+              </div>
+              <div>
+                <h2 className="text-base font-semibold">{element.heading}</h2>
+                <p className="text-sm text-gray-400">{element.Description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-              <div className="flex flex-col w-[410px] h-[432px] gap-8 ">
-                     {
-                      timeline.map((element, index)=>{
-                           return(
-                              <div className='flex  flex-row gap-6' key={index}>
-                                  <div className='w-[50px] h-[50px] bg-white flex  items-center justify-center'>
-                                     <img src={element.Logo}/> 
-                                  </div>
-                                  <div className='flex flex-col  gap-1 '>
-                                      <h2 className=' font-sans font-medium leading-6'>{element.heading}</h2>
-                                       <h2 className='leading-6 text-sm'>{element.Description}</h2>
-                                  </div>
-                              </div>
-                           )
-                      })
-                     }
-                  </div>
-                 
-                  <div className=' w-6/12 relative'>
-                     
-                        <video muted loop autoPlay playsInline>
-                          <source src={TimeLineSectionVideo} type="video/mp4" />
-                        </video>
+        
+      <div className=" lg:w-6/12 relative ">
+ 
+  <video
+    muted
+    loop
+    autoPlay
+    playsInline
+    className=" h-auto object-cover rounded-md"
+  >
+    <source src={TimeLineSectionVideo} type="video/mp4" />
+  </video>
 
-                        <div className="bg-[#014A32] w-9/12 h-30 gap-14  absolute  translate-y-[-50%] translate-x-[25%]">
-                            <div  className=" flex fles-row gap-7  justify-center">
-                                <div className=" w-40 h-11 gap-6 flex flex-row ju">
-                                  <p className="h-11 w-10 text-white font-sans font-bold text-4xl">20</p>
-                                   <p className=" text-[#538272] text-[14px] font-medium">YEARS EXPERIENCES</p>
-                                </div>
-                                  <div className="w-11 border-t-2 border-emerald-100 -rotate-90 bottom-X (0, 1, 2, 4, 8,">
+ 
+  <div className="absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 
+                bg-[#014A32] w-[90%] max-w-md flex justify-between items-center 
+                px-6 py-3 rounded-md shadow-lg z-10">
+ 
+  <div className="flex flex-col items-center text-white text-center">
+    <p className="text-lg font-bold">10</p>
+    <p className="text-xs text-[#538272] leading-tight">
+      YEARS<br />EXPERIENCES
+    </p>
+  </div>
 
-                          
-                                  </div>
-                                <div className=" w-40 h-11 gap-6 flex flex-row" >
-                                  <p className="h-11 w-10 text-white font-sans font-bold text-4xl mr-2">250</p>
-                                   <p className=" text-[#538272] text-[14px] font-medium">TYPES OFCOURSES</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                   </div> 
-          </div>    
+  <div className="h-8 w-px bg-[#538272] mx-4"></div>
+
+  
+  <div className="flex flex-col items-center text-white text-center">
+    <p className="text-lg font-bold">250</p>
+    <p className="text-xs text-[#538272] leading-tight">
+      TYPES OF<br />COURSES
+    </p>
+  </div>
+</div>
+
+</div>
+
+        
+      </div>
     </div>
   );
 }
-
-
-
