@@ -145,6 +145,7 @@ export function login(email, password, navigate) {
       navigate("/dashboard/my-profile");
     } catch (error) {
       console.error("LOGIN API ERROR..........", error);
+       toast.error(error.response.data.message);
      
       toast.error(error.message || "Login Failed");
     }
