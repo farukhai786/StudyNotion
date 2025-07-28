@@ -62,7 +62,7 @@ export default function Home() {
           <CodeBlock 
            position={"lg:flex-row"}
            heading={
-           <div className="w-[486px] h-[88px] font-inter font-semibold text-[36px] leading-[44px] tracking-[-0.02em]" style={{ fontFamily: 'Inter' }}
+           <div className="lg:w-[486px] lg:h-[88px] font-inter font-semibold text-[36px] leading-[44px] tracking-[-0.02em]" style={{ fontFamily: 'Inter' }}
 >
      Unlock your <HighlightText text={"coding potential"} /> with our online courses.
 </div>
@@ -103,7 +103,7 @@ export default function Home() {
              <CodeBlock 
               position={"lg:flex-row-reverse"}
               heading={
-              <div className="w-[486px] h-[88px] font-inter font-semibold text-[36px] leading-[44px] tracking-[-0.02em]" style={{ fontFamily: 'Inter' }}
+              <div className="lg:w-[486px] lg:h-[88px] font-inter font-semibold text-[36px] leading-[44px] tracking-[-0.02em]" style={{ fontFamily: 'Inter' }}
               >
                 Unlock your <HighlightText text={"coding potential"} /> with our online courses.
               </div>
