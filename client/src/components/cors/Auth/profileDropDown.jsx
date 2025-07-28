@@ -6,7 +6,6 @@ import { FiChevronDown } from "react-icons/fi"
 import { MdDashboard, MdLogout } from "react-icons/md"
 import { logout } from '../../../servises/operation/AuthApi'
 
-
 export default function ProfileDropDown() {
   const [showDropdown, setShowDropdown] = useState(false)
   const dropdownRef = useRef(null)
@@ -20,7 +19,10 @@ export default function ProfileDropDown() {
         setShowDropdown(false)
       }
     }
+    
     document.addEventListener("mousedown", handleClickOutside)
+    
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
@@ -28,12 +30,17 @@ export default function ProfileDropDown() {
 
   const handleLogout = () => {
     dispatch(logout(navigate))
-  
+    setShowDropdown(false) 
+  }
+
+  const handleNavigateToProfile = () => {
+    setShowDropdown(false) 
+    navigate("/dashboard/my-profile")
   }
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Avatar + Dropdown toggle */}
+   
       <button
         onClick={() => setShowDropdown(!showDropdown)}
         className="flex items-center gap-2 text-white focus:outline-none"
@@ -49,18 +56,18 @@ export default function ProfileDropDown() {
         <FiChevronDown size={20} />
       </button>
 
-      {/* Dropdown content */}
+   
       {showDropdown && (
         <div className="absolute right-0 mt-2 w-48 bg-[#1f2937] text-white rounded-md shadow-lg py-2 z-50">
           <button
-            onClick={() => navigate("/dashboard/my-profile")}
+            onClick={handleNavigateToProfile} 
             className="flex items-center w-full px-4 py-2 hover:bg-gray-700 text-sm gap-2"
           >
             <MdDashboard size={18} />
             Dashboard
           </button>
           <button
-            onClick={handleLogout}
+            onClick={handleLogout} 
             className="flex items-center w-full px-4 py-2 hover:bg-gray-700 text-sm gap-2"
           >
             <MdLogout size={18} />
