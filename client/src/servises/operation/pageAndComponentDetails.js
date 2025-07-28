@@ -12,7 +12,7 @@ const {
 } = categoriesEndpoints
 
 export const getCategoryPageDetails = async (categoryId) => {
-  const toastId = toast.loading("लोड हो रहा है...");
+  const toastId = toast.loading("Loading");
 
   try {
  
