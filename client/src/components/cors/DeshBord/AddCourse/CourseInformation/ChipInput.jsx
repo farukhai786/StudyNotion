@@ -60,7 +60,7 @@ const ChipInput = ({ label, name, placeholder = "Choose a Tag", register, errors
           className="w-full rounded-md bg-[#2C333F] px-4 py-2 text-[#F1F2FF] placeholder:text-[#999DAA] border border-[#424854] focus:outline-none"
         />
     
-        <button type="button" onClick={addChip} className="ml-2 text-white bg-purple-500 hover:bg-purple-700 px-4 py-2 rounded-md">
+        <button type="button" onClick={addChip} className="ml-2 text-white bg-yellow-500 hover:bg-yellow-700 px-4 py-2 rounded-md">
           Add
         </button>
       </div>
