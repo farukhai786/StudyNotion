@@ -16,7 +16,7 @@ const dotenv = require("dotenv");
 console.log("🔍 RAZORPAY_KEY_ID:", process.env.RAZORPAY_KEY_ID);
 console.log("🔍 RAZORPAY_SECRET:", process.env.RAZORPAY_SECRET);
 console.log("⚡ API routes mounted at /api/v1");
-
+console.log("Frontend URL:", process.env.FRONTEND_URL);  // यह कंसोल में सही URL प्रिंट करेगा
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
@@ -25,7 +25,7 @@ database.connect();
 app.use(express.json());
 app.use(express.urlencoded({ limit: '1gb', extended: true }));
 app.use(cookieParser());
-console.log("Frontend URL:", process.env.FRONTEND_URL);  // यह कंसोल में सही URL प्रिंट करेगा
+
 
 // CORS सेटिंग्स को सही तरीके से सेट करें
 app.use(
