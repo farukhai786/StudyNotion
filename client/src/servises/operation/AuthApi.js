@@ -124,6 +124,9 @@ export function login(email, password, navigate) {
 
       const token = response.data.token;
       const user = response.data.user;
+      if(user== !email){
+        toast.error(" user not registered");
+     }
 
       const userImage = user?.image
         ? user.image
