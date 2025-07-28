@@ -101,7 +101,7 @@ const enrollStudents = async (courses, userId) => {
     );
     if (!course) throw new ExpressError(`Course not found: ${courseId}`);
 
-    const courseProgress = await CourseProgress.create({
+    const courseProgress = await CourseProgres.create({
       courseId,
       userId,
       completedVideos: [],
