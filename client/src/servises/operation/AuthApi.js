@@ -37,7 +37,7 @@ export function sendOtp(email, navigate, signupData) {
         throw new Error(response.data.message);
       }
 
-      // ✅ Store signup data in redux
+ 
       dispatch(setSignupData(signupData));
       localStorage.setItem("signupData", JSON.stringify(signupData)); // optional
 
@@ -92,13 +92,12 @@ export function signUp(
       toast.success("Signup Successful");
 
 
-      // ✅ After signup, go to login page
+     
       navigate("/login");
     } catch (error) {
       console.log("SIGNUP API ERROR..........", error);
       toast.error("Signup Failed");
 
-      // ❌ Optional: keep user on signup page
       navigate("/signup");
     }
 
@@ -117,16 +116,19 @@ export function login(email, password, navigate) {
       const response = await apiConnector("POST", LOGIN_API, { email, password });
 
       if (!response.data.success) {
-        throw new Error(response.data.message);
+        throw new Error(response.data.message || "Login Failed");
       }
 
       toast.success("Login Successful");
 
       const token = response.data.token;
       const user = response.data.user;
-      if(user== !email){
-        toast.error(" user not registered");
-     }
+
+      
+      if (!user) {
+        toast.error("User not registered");
+        return;
+      }
 
       const userImage = user?.image
         ? user.image
@@ -134,20 +136,22 @@ export function login(email, password, navigate) {
 
       const fullUser = { ...user, image: userImage };
 
-      // ✅ Redux set
+     
       dispatch(setToken(token));
       dispatch(setUser(fullUser));
 
-      // ✅ LocalStorage set
       localStorage.setItem("token", JSON.stringify(token));
       localStorage.setItem("user", JSON.stringify(fullUser));
 
+     
       navigate("/dashboard/my-profile");
     } catch (error) {
-      console.log("LOGIN API ERROR..........", error);
-      toast.error("Login Failed");
+      console.error("LOGIN API ERROR..........", error);
+     
+      toast.error(error.message || "Login Failed");
     }
 
+ 
     dispatch(setLoading(false));
     toast.dismiss(toastId);
   };
@@ -216,10 +220,10 @@ export async function resetPassword(token, password, confirmPassword, navigate) 
 
     toast.success("Password reset successful");
 
-    // 👇 Send user to success page with email
+
     navigate("/reset-complete", {
       state: {
-        email: response.data.email,  // 👈 email from backend
+        email: response.data.email,  
       },
     });
 
