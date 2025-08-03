@@ -44,7 +44,7 @@ export default function CourseDetails() {
   const [confirmationModal, setConfirmationModal] = useState(null);
   const [activeSections, setActiveSections] = useState([]);
 
-  // ─── 1. Fetch course details ──────────────────────────────
+
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
@@ -61,14 +61,12 @@ export default function CourseDetails() {
     fetchCourseDetails();
   }, [courseId]);
 
-  // ─── 2. Average Rating ────────────────────────────────────
   useEffect(() => {
     if (course?.ratingAndReviews?.length) {
       setAvgReviewCount(getAvgRating(course.ratingAndReviews));
     }
   }, [course]);
 
-  // ─── 3. Total Lectures Count ──────────────────────────────
   useEffect(() => {
     if (course?.courseContent?.length) {
       const total = course.courseContent.reduce(
@@ -79,14 +77,14 @@ export default function CourseDetails() {
     }
   }, [course]);
 
-  // ─── 4. Initialize Accordion ──────────────────────────────
+ 
   useEffect(() => {
     if (course?.courseContent?.length) {
       setActiveSections(course.courseContent.map(() => false));
     }
   }, [course]);
 
-  // ─── Toggle Section Expand/Collapse ───────────────────────
+
   const toggleSection = (idx) => {
     setActiveSections((prev) =>
       prev.map((open, i) => (i === idx ? !open : open))
@@ -109,7 +107,7 @@ export default function CourseDetails() {
     });
   };
 
-  // ─── Buy Course ───────────────────────────────────────────
+
   const handleBuyCourse = async () => {
     if (user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       return toast.error("Instructors cannot buy courses");
@@ -121,7 +119,7 @@ export default function CourseDetails() {
     dispatch(setPaymentLoading(false));
   };
 
-  // ─── Add to Cart ──────────────────────────────────────────
+
   const handleAddToCart = () => {
     if (user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       return toast.error("Instructors cannot buy courses");
@@ -131,11 +129,11 @@ export default function CourseDetails() {
     dispatch(addToCart(course));
   };
 
-  // ─── Early UI Return ──────────────────────────────────────
+
   if (loading) return <p className="text-white text-center">Loading…</p>;
   if (!course) return <p className="text-white text-center">Course not found</p>;
 
-  // ─── Destructure Course Data ──────────────────────────────
+  
   const {
     courseName,
     courseDescription,
@@ -155,7 +153,7 @@ export default function CourseDetails() {
 
   return (
    <div className="text-white">
-  {/* ─── Course Header ─────────────────────────────── */}
+
   <div className="bg-[#161D29]">
     <div className="w-11/12 max-w-[1280px] mx-auto py-6 flex flex-col gap-5 relative">
       <div className="text-xs sm:text-sm text-gray-400">
