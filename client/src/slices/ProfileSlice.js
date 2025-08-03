@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// ✅ Step 1: Initial state with localStorage support
 const initialState = {
   user: localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
