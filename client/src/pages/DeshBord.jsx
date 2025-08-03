@@ -13,12 +13,12 @@ const Dashboard = () => {
 
   return (
     <div className="relative flex min-h-[calc(100vh-3.5rem)] flex-col lg:flex-row">
-      {/* Sidebar */}
+  
       <div className="lg:block w-full lg:w-1/4 bg-gray-800 text-white p-4 transition-all">
         <Sidebar />
       </div>
 
-      {/* Main Content */}
+      
       <div className="flex-1 h-[calc(100vh-3.5rem)] overflow-auto">
         <div className="mx-auto w-full sm:w-10/12 lg:w-10/12 max-w-[1000px] my-10 px-4">
           <Outlet />
