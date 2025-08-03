@@ -37,13 +37,13 @@ export async function getUserEnrolledCourses(token) {
       }
     );
 
-    console.log("✅ API Response:", response);
+    console.log(" API Response:", response);
 
     if (!response.data?.success) {
       throw new Error(response.data?.message || "Failed to fetch courses");
     }
 
-    result = response.data.courses; // ✅ Enriched courses from backend
+    result = response.data.courses; 
     toast.success("Courses loaded");
   } catch (error) {
     console.error("❌ GET_USER_ENROLLED_COURSES_API ERROR:", error);
@@ -76,14 +76,13 @@ export async function getUserEnrolledCourses(token) {
 
       if (!res.data.success) throw new Error(res.data.message);
 
-      /* 3. placeholder avatar generate करें (अगर image null) */
+
       const u = res.data.user;
       const img =
         u?.image ||
         `https://api.dicebear.com/5.x/initials/svg?seed=${u.firstName}%20${u.lastName}`;
       const fullUser = { ...u, image: img };
 
-      /* 4. Redux + localStorage अप‑टू‑डेट */
       dispatch(setUser(fullUser));
       localStorage.setItem("user", JSON.stringify(fullUser));
 
@@ -103,8 +102,6 @@ export async function getUserEnrolledCourses(token) {
 
 
 
-// ✅ Update Profile Info
-// actions/profile.js (or wherever you keep thunks)
 
 
 
@@ -123,7 +120,7 @@ export function deleteAccount(navigate) {
 
       toast.success("Account deleted successfully");
 
-      // Clear all state & storage
+\
       localStorage.clear();
       dispatch(setToken(null));
       dispatch(setUser(null));
@@ -141,38 +138,8 @@ export function deleteAccount(navigate) {
 
 
 
-// ✅ Get All User Details
-// export function getUserDetails() {
-//   return async (dispatch) => {
-//     try {
-//       const res = await apiConnector("GET", GET_USER_DETAILS_API)
-//       if (!res.data.success) throw new Error(res.data.message)
-
-//       dispatch(setUser(res.data.user))
-//     } catch (err) {
-//       console.log("GET USER DETAILS ERROR:", err)
-//     }
-//   }
-// }
-
-// ✅ Update Display Picture
 
 
-// // ✅ Get Enrolled Courses
-// export function getEnrolledCourses() {
-//   return async () => {
-//     try {
-//       const res = await apiConnector("GET", GET_ENROLLED_COURSES_API)
-//       if (!res.data.success) throw new Error(res.data.message)
-
-//       return res.data.courses
-//     } catch (err) {
-//       console.log("GET ENROLLED COURSES ERROR:", err)
-//       toast.error("Could not fetch enrolled courses")
-//       return []
-//     }
-//   }
-// }
 
 export function updateDisplayPicture(file) {
   return async (dispatch) => {
