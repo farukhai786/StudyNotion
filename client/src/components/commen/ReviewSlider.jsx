@@ -68,12 +68,11 @@ const ReviewSlider = () => {
                 </div>
 
 
-                {/* Review Text */}
                 <p className="text-gray-600 text-base leading-relaxed italic">
                   “{review.review}”
                 </p>
 
-                {/* User Info */}
+                
                 <div className="flex items-center gap-3 mt-auto">
                   <img
                     src={review.user.image}
