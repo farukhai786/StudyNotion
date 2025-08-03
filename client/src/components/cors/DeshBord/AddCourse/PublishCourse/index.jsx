@@ -89,7 +89,7 @@ export default function PublishCourse() {
       ← Back
     </button>
 
-    {/* Save and Publish Button (Submit) */}
+   
     <button
       type="submit"
       disabled={loading}
