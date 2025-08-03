@@ -6,7 +6,7 @@ export const footerData = {
   },
 
   columns: [
-    // Col 1 - Resources & Plans
+ 
     [
       {
         title: "Resources",
@@ -20,7 +20,7 @@ export const footerData = {
         links: ["Paid memberships", "For students", "Business solutions"],
       },
     ],
-    // Col 2 - Support & Community
+
     [
       {
         title: "Support",
@@ -31,7 +31,7 @@ export const footerData = {
         links: ["Forums", "Chapters", "Events"],
       },
     ],
-    // Col 3 - Subjects
+   
     [
       {
         title: "Subjects",
@@ -43,7 +43,7 @@ export const footerData = {
         ],
       },
     ],
-    // Col 4 - Languages
+   
     [
       {
         title: "Languages",
@@ -53,7 +53,7 @@ export const footerData = {
         ],
       },
     ],
-    // Col 5 - Career Building
+  
     [
       {
         title: "Career building",
