@@ -31,7 +31,7 @@ export default function EditProfile() {
     confirmNewPassword: '',
   })
 
-  // Sync Redux user to local form state
+
   useEffect(() => {
     if (user) {
       setFormData({
@@ -55,7 +55,7 @@ export default function EditProfile() {
 
 const handleImageUpdate = () => {
   if (imageChanged && image instanceof File) {
-    dispatch(updateDisplayPicture(image)) // ✅ pass file directly
+    dispatch(updateDisplayPicture(image)) 
     setImageChanged(false)
   }
 }
@@ -183,7 +183,7 @@ const handleImageUpdate = () => {
     </div>
   </div>
 
-  {/* Footer Buttons */}
+
   <div className="flex justify-end gap-4 pt-4">
     <button className="px-4 py-2 bg-[#3E4C63] text-white rounded cursor-pointer">Cancel</button>
     <button className="px-4 py-2 bg-[#FFD60A] text-black rounded font-semibold cursor-pointer" onClick={handleProfileUpdate}>
@@ -193,7 +193,7 @@ const handleImageUpdate = () => {
 </div>
 
 
-      {/* 3. Password Section */}
+ 
       <div className="rounded-lg bg-[#2C333F] p-6 border border-[#3E4C63] space-y-4">
         <p className="text-lg font-semibold">Password</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
