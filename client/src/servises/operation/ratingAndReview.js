@@ -28,7 +28,7 @@ export const createRating = async (data, token) => {
 
     return response.data;
   } catch (err) {
-    console.error("❌ createRating error:", err);
+    console.error(" createRating error:", err);
 
     return {
       success: false,
