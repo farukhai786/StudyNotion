@@ -29,7 +29,7 @@ export const markLectureAsComplete = async (data, token) => {
     } else {
       const msg = response.data?.message || "Unknown error";
 
-      // ✅ Handle expected case gracefully
+     
       if (msg.includes("already marked as completed")) {
         toast("Already completed", { icon: "✔️" });
         result = false;
