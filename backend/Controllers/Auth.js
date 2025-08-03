@@ -8,7 +8,7 @@ const Profile = require("../Models/Profile");
 const {mailSender} = require("../Utils/mailSendar");
 
 
-// ======================== SEND OTP ========================
+
 exports.sendOtp = async (req, res) => {
   try {
     const { email } = req.body;
@@ -39,7 +39,7 @@ exports.sendOtp = async (req, res) => {
   }
 };
 
-// ======================== SIGN UP ========================
+
 exports.signUp = async (req, res) => {
   try {
     const {
@@ -101,7 +101,7 @@ exports.signUp = async (req, res) => {
   }
 };
 
-// ======================== LOGIN ========================
+
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -137,7 +137,7 @@ exports.login = async (req, res) => {
   }
 };
 
-// ======================== CHANGE PASSWORD ========================
+
 exports.changePassword = async (req, res) => {
   try {
     const userId = req.user.id;
