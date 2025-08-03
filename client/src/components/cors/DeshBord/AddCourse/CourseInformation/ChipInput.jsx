@@ -6,20 +6,19 @@ const ChipInput = ({ label, name, placeholder = "Choose a Tag", register, errors
   const [text, setText] = useState("");
   const chips = useWatch({ control, name, defaultValue: [] });
 
-  // Register the field when the component mounts
+
   useEffect(() => {
     register(name, { required: true });
   }, [register, name]);
 
-  // Add chip to the list
   const addChip = () => {
     if (text.trim()) {
       setValue(name, [...chips, text.trim()]);
-      setText(""); // Clear input after adding chip
+      setText(""); 
     }
   };
 
-  // Remove chip from the list
+
   const removeChip = (idx) => {
     const updatedChips = chips.filter((_, i) => i !== idx);
     setValue(name, updatedChips);
