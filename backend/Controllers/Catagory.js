@@ -43,7 +43,7 @@ function getRandomInt(max) {
 exports.categoryPageDetails = async (req, res) => {
   const { categoryId } = req.body;
 
-  // 1️⃣ Get selected category with published courses
+
   const selectedCategory = await Category.findById(categoryId)
     .populate({
       path: "courses",
@@ -82,7 +82,7 @@ exports.categoryPageDetails = async (req, res) => {
     }
   }
 
-  // 3️⃣ Get top-selling published courses across all categories
+
   const allCategories = await Category.find()
     .populate({
       path: "courses",
@@ -98,7 +98,7 @@ exports.categoryPageDetails = async (req, res) => {
     .sort((a, b) => b.sold - a.sold)
     .slice(0, 10);
 
-  // ✅ Final response
+ 
   return res.status(200).json({
     success: true,
     data: {
