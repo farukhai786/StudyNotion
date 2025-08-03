@@ -89,7 +89,7 @@ export default function CourseBuilder() {
     setValue("sectionName", name);
   };
 
-  /* ───────── UI ───────── */
+  
   return (
    <>
     <div className="rounded-lg bg-[#0E1117] p-4 sm:p-6 space-y-6 border border-[#1E293B]">
