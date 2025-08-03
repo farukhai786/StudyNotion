@@ -39,7 +39,7 @@ function App() {
    <div className="w-screen min-h-screen font-inter overflow-auto scrollbar-hide">
       <Navbar />
 <Routes>
-        {/* Open Routes */}
+   
         
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -51,7 +51,7 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/catalog/:catalogName" element={<Catalog/>} />
         <Route path="/course/:courseId" element={<CourseDetails/>} />
-        {/* Private Dashboard Routes */}
+
         <Route
           path="/dashboard"
           element={
@@ -61,12 +61,12 @@ function App() {
           }
         >
           <Route index element={<Navigate to="my-profile" replace />} />
-          {/* Common for all users */}
+        
      
           <Route path="my-profile" element={<MyProfile />} />
           <Route path="settings" element={<EditProfile />} />
 
-          {/* Student-specific routes */}
+      
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
               <Route path="cart" element={<Cart />} />
@@ -74,7 +74,7 @@ function App() {
             </>
           )}
 
-          {/* Instructor-specific routes */}
+
           {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
             <>
               <Route path="add-course" element={<AddCourse />} />
@@ -85,24 +85,23 @@ function App() {
           )}
         </Route>
         
-     {/* ───────── Course‑player route (protected) ───────── */}
+    
 
 
 
 
-// parent  ──────────────────────────────────────────
 <Route
   path="/view-course/:courseId"
   element={
     <PrivateRoute>
-      <ViewCourse />          {/* 1×  ← sidebar lives here */}
+      <ViewCourse />         
     </PrivateRoute>
   }
 >
-  {/* child (lecture/player) ─────────────────────── */}
+
   <Route
     path="section/:sectionId/sub-section/:subSectionId"
-    element={<VideoDetails/>} /*  NOT  <ViewCourse/> or <VideoDetailsSidebar/> */
+    element={<VideoDetails/>} 
   />
 </Route>
 
