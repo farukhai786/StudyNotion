@@ -72,10 +72,10 @@ export default function SubSectionModal({
 if (result) {
   const updatedCourseContent = course.courseContent
   .map((section) => {
-    if (!section) return null; // safely handle undefined
+    if (!section) return null; 
     return section._id === modalData.sectionId ? result : section;
   })
-  .filter(Boolean); // removes null or undefined
+  .filter(Boolean); 
 
    console.log("✅ updatedSection:", result.updatedSection);
 
@@ -127,7 +127,7 @@ const result = await createSubSection(formData, token);
 if (result) {
   const updatedCourseContent = course.courseContent.map((section) =>
     section._id === modalData.sectionId ? result : section
-  // ✅ fix here
+
   );
 
   const updatedCourse = {
@@ -173,7 +173,7 @@ if (result) {
              video={true}
              viewData={view ? modalData.videoUrl : null}
              editData={edit ? modalData.videoUrl : null}
-             isRequired={!edit}  // ✅ required only in add mode
+             isRequired={!edit}  
          />
  
         <div>
