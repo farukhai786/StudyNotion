@@ -78,16 +78,15 @@ export default function Catalog() {
   return (
   <>
     <div className="max-w-10/12 mx-auto py-10 px-4 sm:px-6 text-white">
-  {/* Breadcrumb */}
+
   <p className="mb-6 text-lg sm:text-xl md:text-2xl font-semibold">
     Home / Catalog / <span className="text-amber-100">{category?.name}</span>
   </p>
 
-  {/* Category Title & Description */}
   <p className="mb-2 text-base sm:text-lg font-medium">{category?.name}</p>
   <p className="mb-8 text-sm sm:text-base text-gray-400">{category?.description}</p>
 
-  {/* Section 1: Get Started Courses */}
+
   <section className="mb-10">
     <p className="mb-2 text-base sm:text-lg font-semibold">Courses to get you started</p>
     
