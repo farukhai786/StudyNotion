@@ -35,7 +35,7 @@ export const getCategoryPageDetails = async (categoryId) => {
     const msg =
       err?.response?.data?.message ||
       err.message ||
-      "कोई अज्ञात त्रुटि हुई";
+    
     toast.error(msg);
 
     return err?.response?.data || { success: false, message: msg };
