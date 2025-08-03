@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from "react-hot-toast"
 
-// LocalStorage helpers
 const updateLocalStorage = (cart, totalItems, totalPrice) => {
   localStorage.setItem("cart", JSON.stringify(cart))
   localStorage.setItem("totalItems", JSON.stringify(totalItems))
@@ -18,13 +17,13 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    // ✅ Manually set total item count
+  
     setTotalItem(state, action) {
       state.totalItems = action.payload
       localStorage.setItem("totalItems", JSON.stringify(action.payload))
     },
 
-    // ✅ Add item to cart
+
     addToCart(state, action) {
       const item = action.payload
       const existingItem = state.cart.find(i => i._id === item._id)
@@ -56,7 +55,7 @@ export const cartSlice = createSlice({
       }
     },
 
-    // ✅ Reset cart
+
     resetCart(state) {
       state.cart = []
       state.totalItems = 0
