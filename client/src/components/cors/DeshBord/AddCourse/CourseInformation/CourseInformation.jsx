@@ -76,7 +76,7 @@ export default function CourseInformationForm() {
   const onSubmit = async (data) => {
     const cur = getValues();
 
-    /* ───── EDIT FLOW ───── */
+
     if (editCourse) {
       if (!isFormUpdated()) {
         toast.error("No changes made");
@@ -86,7 +86,6 @@ export default function CourseInformationForm() {
       const formData = new FormData();
       formData.append("courseId", course._id);
 
-      // append only changed fields
       if (cur.courseTitle !== course.courseName)
         formData.append("courseName", data.courseTitle);
 
@@ -111,11 +110,10 @@ export default function CourseInformationForm() {
           JSON.stringify(data.courseRequirements)
         );
 
-      // thumbnail: append only if a new file was chosen
       if (cur.courseImage !== course.thumbnail && typeof data.courseImage !== "string") {
-        formData.append("thumbnail", data.courseImage); // new file
+        formData.append("thumbnail", data.courseImage);
       } else {
-        formData.append("thumbnail", course.thumbnail); // keep old URL
+        formData.append("thumbnail", course.thumbnail); 
       }
 
       setLoading(true);
@@ -125,12 +123,12 @@ export default function CourseInformationForm() {
       if (updatedCourse) {
         toast.success("Course updated");
         dispatch(setCourse(updatedCourse));
-        dispatch(setStep(2)); // proceed to Course Builder
+        dispatch(setStep(2)); 
       }
-      return; // stop if edit path
+      return; 
     }
 
-    /* ───── CREATE FLOW ───── */
+  
     const formData = new FormData();
     formData.append("courseName", data.courseTitle);
     formData.append("courseDescription", data.courseShortDesc);
@@ -141,7 +139,7 @@ export default function CourseInformationForm() {
     formData.append("instructions", JSON.stringify(data.courseRequirements));
     formData.append("thumbnail", data.courseImage);
     formData.append("status", COURSE_STATUS.DRAFT);
-    console.log("STATUS:", COURSE_STATUS.DRAFT); // Should print: "Draft"
+    console.log("STATUS:", COURSE_STATUS.DRAFT); 
 
     setLoading(true);
     const newCourse = await addCourseDetails(formData, token);
@@ -150,11 +148,11 @@ export default function CourseInformationForm() {
     if (newCourse) {
       toast.success("Course drafted");
       dispatch(setCourse(newCourse));
-      dispatch(setStep(2)); // proceed to Course Builder
+      dispatch(setStep(2));
     }
   };
 
-  /* ────────────────────────── UI ───────────────────────────────────── */
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -164,7 +162,7 @@ export default function CourseInformationForm() {
         space-y-6 text-sm
       "
     >
-      {/* ── Title ── */}
+ 
       <div className="space-y-1">
         <label className="text-[#E5E7EB] font-medium">
           Course Title <sup className="text-red-500">*</sup>
@@ -179,7 +177,7 @@ export default function CourseInformationForm() {
         )}
       </div>
 
-      {/* ── Short description ── */}
+      
       <div className="space-y-1">
         <label className="text-[#E5E7EB] font-medium">
           Course Short Description <sup className="text-red-500">*</sup>
@@ -194,7 +192,6 @@ export default function CourseInformationForm() {
         )}
       </div>
 
-      {/* ── Price ── */}
       <div className="space-y-1">
         <label className="text-[#E5E7EB] font-medium">
           Price <sup className="text-red-500">*</sup>
@@ -213,7 +210,7 @@ export default function CourseInformationForm() {
         )}
       </div>
 
-      {/* ── Category ── */}
+   
       <div className="space-y-1">
         <label className="text-[#E5E7EB] font-medium">
           Category <sup className="text-red-500">*</sup>
