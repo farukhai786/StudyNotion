@@ -1,13 +1,12 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-// api/categories.js
+
   export const categories = {
     CATEGORIES_API: BASE_URL + "/course/showAllCategories",
   };
 
  
-// services/apis.js
-// Auth-related endpoints
+
   export const AuthEndpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
   SIGNUP_API: BASE_URL + "/auth/signup",
@@ -17,20 +16,20 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
   CHANGE_PASSWORD_API :BASE_URL + "/auth/changepassword",
 };
 
-// Course/category endpoints
+
 export const CATEGORIES_API = BASE_URL + "/course/showAllCategories";
 
-// Export grouped endpoints if needed elsewhere
 
 
 
-//profile api 
+
+
 
  export const profileEndpoints = {
-  UPDATE_PROFILE_API: BASE_URL + "/Profile/update",              // PUT request
-  DELETE_PROFILE_API: BASE_URL + "/Profile/delete",              // DELETE request
-  GET_USER_DETAILS_API: BASE_URL + "/Profile/details",           // GET request
-  UPDATE_DISPLAY_PICTURE_API: BASE_URL + "/Profile/display-picture", // PUT (formData)
+  UPDATE_PROFILE_API: BASE_URL + "/Profile/update",
+  DELETE_PROFILE_API: BASE_URL + "/Profile/delete",            
+  GET_USER_DETAILS_API: BASE_URL + "/Profile/details",          
+  UPDATE_DISPLAY_PICTURE_API: BASE_URL + "/Profile/display-picture", 
   GET_ENROLLED_COURSES_API: BASE_URL + "/Profile/enrolled-courses", 
   GET_INSTRUCTOR_DATA_API:  BASE_URL + "/profile/instructorDashboard"
 }
@@ -41,42 +40,42 @@ export const CATEGORIES_API = BASE_URL + "/course/showAllCategories";
 
 
 export const courseEndpoints = {
-  // 🔹 Course Management
-  CREATE_COURSE_API: BASE_URL + "/course/createCourse",                // POST (formData: thumbnailImage)
-  GET_ALL_COURSE_API: BASE_URL + "/getAllCourses",              // GET
-  GET_COURSE_DETAILS_API: BASE_URL + "/course/getCourseDetails",       // POST
+
+  CREATE_COURSE_API: BASE_URL + "/course/createCourse",              
+  GET_ALL_COURSE_API: BASE_URL + "/getAllCourses",         
+  GET_COURSE_DETAILS_API: BASE_URL + "/course/getCourseDetails",     
    EDIT_COURSE_API: BASE_URL + "/course/editCourse",
    INSTRUCTOR_COURSES_API: BASE_URL + "/course/getInstructorCourses",
    DELETE_COURSE_API: BASE_URL + "/course/deleteCourse",
    GET_FULL_COURSE_DETAILS:  BASE_URL + "/course/getFullCourseDetails",
-  // 🔹 Section
-  CREATE_SECTION_API: BASE_URL + "/course/addSection",                 // POST
-  UPDATE_SECTION_API: BASE_URL + "/course/updateSection",              // POST
-  DELETE_SECTION_API: BASE_URL + "/course/deleteSection",              // POST
 
-  // 🔹 Sub-Section
-  CREATE_SUBSECTION_API: BASE_URL + "/course/addSubSection",           // POST (formData: videoFile)
-  UPDATE_SUBSECTION_API: BASE_URL + "/course/updateSubSection",        // POST
+  CREATE_SECTION_API: BASE_URL + "/course/addSection",             
+  UPDATE_SECTION_API: BASE_URL + "/course/updateSection",            
+  DELETE_SECTION_API: BASE_URL + "/course/deleteSection",         
+
+
+  CREATE_SUBSECTION_API: BASE_URL + "/course/addSubSection",       
+  UPDATE_SUBSECTION_API: BASE_URL + "/course/updateSubSection",       
   DELETE_SUBSECTION_API: BASE_URL + "/course/deleteSubSection",    
   
-  CREATE_CATEGORY_API: BASE_URL + "/course/createCatagory",            // POST (admin only)
-  SHOW_ALL_CATEGORIES_API: BASE_URL + "/course/showAllCategories",     // GET
+  CREATE_CATEGORY_API: BASE_URL + "/course/createCatagory",          
+  SHOW_ALL_CATEGORIES_API: BASE_URL + "/course/showAllCategories",    
   GET_CATEGORY_PAGE_DETAILS_API: BASE_URL + "/course/getCategoryPageDetails",
 
   
-  //
+ 
 }
 
 
 export const categoriesEndpoints = {
  
   
-  CREATE_CATEGORY_API: BASE_URL + "/course/createCatagory",            // POST (admin only)
-  SHOW_ALL_CATEGORIES_API: BASE_URL + "/course/showAllCategories",     // GET
+  CREATE_CATEGORY_API: BASE_URL + "/course/createCatagory",           
+  SHOW_ALL_CATEGORIES_API: BASE_URL + "/course/showAllCategories",
   GET_CATEGORY_PAGE_DETAILS_API: BASE_URL + "/course/getCategoryPageDetails",
 
   
-  //
+  
 }
 
 export const studentEndPiont = {
@@ -87,8 +86,8 @@ export const studentEndPiont = {
 
 export const ratingEndpoints = {
   CREATE_RATING_API: BASE_URL + "/course/createRating",
-  GET_ALL_REVIEWS_API: BASE_URL + "/course/getReviews",             // needs courseId param
-  GET_AVERAGE_RATING_API: BASE_URL + "/course/getAverageRating",   // needs courseId param
+  GET_ALL_REVIEWS_API: BASE_URL + "/course/getReviews",             
+  GET_AVERAGE_RATING_API: BASE_URL + "/course/getAverageRating",   
 };
 
 
