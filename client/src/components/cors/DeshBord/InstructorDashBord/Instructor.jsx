@@ -54,15 +54,15 @@ const Instructor = () => {
         <div className="text-center text-gray-300">Loading data...</div>
       ) : (
         <>
-          {/* Chart + Stats */}
+
           <div className="flex flex-col lg:flex-row gap-6 w-full">
-            {/* Chart Card */}
+     
             <div className="bg-[#161D29] p-6 rounded-md flex-1">
               <h2 className="text-lg font-semibold mb-4">Visualize</h2>
               <InstructorChart courses={courses} />
             </div>
 
-            {/* Stats Card */}
+            
             <div className="bg-[#161D29] p-6 rounded-md w-full lg:w-1/3 space-y-2">
               <h2 className="text-lg font-semibold mb-2">Statistics</h2>
               <p className="text-sm text-gray-300">Total Courses: {courses.length}</p>
@@ -74,7 +74,7 @@ const Instructor = () => {
             </div>
           </div>
 
-          {/* Courses Preview */}
+   
           <div className="bg-[#161D29] p-3 rounded-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold">Your Courses</h2>
