@@ -18,12 +18,12 @@ const EnrolledCourses = () => {
         if (Array.isArray(data)) {
           data.forEach((course, index) => {
             console.log(`\n📘 Course #${index + 1}`);
-            console.log("🆔 Course ID:", course._id);
-            console.log("📚 Name:", course.courseName);
-            console.log("📝 Description:", course.courseDescription);
-            console.log("🕒 Duration:", course.totalDuration);
-            console.log("📊 Progress:", course.progressPercentage);
-            console.log("🖼️ Thumbnail:", course.thumbnail);
+            console.log(" Course ID:", course._id);
+            console.log(" Name:", course.courseName);
+            console.log(" Description:", course.courseDescription);
+            console.log(" Duration:", course.totalDuration);
+            console.log(" Progress:", course.progressPercentage);
+            console.log("🖼 Thumbnail:", course.thumbnail);
 
             if (Array.isArray(course.courseContent)) {
               course.courseContent.forEach((section, sIdx) => {
@@ -76,7 +76,7 @@ const EnrolledCourses = () => {
                   className="cursor-pointer border-b border-richblack-600 hover:bg-richblack-800 transition"
                   onClick={() => {
                     if (!firstSection || !firstSubSection) {
-                      console.warn("❌ Missing section or subSection for course:", course.courseName);
+                      console.warn(" Missing section or subSection for course:", course.courseName);
                       return;
                     }
 
