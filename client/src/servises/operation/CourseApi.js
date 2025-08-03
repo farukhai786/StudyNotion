@@ -1,9 +1,12 @@
-import { toast } from 'react-hot-toast'; // make sure this is installed
-import { apiConnector } from '../apiconnector'; // your custom Axios instance
-import {courseEndpoints } from '../apis'; // API endpoint
+import { toast } from 'react-hot-toast'; 
+
+import { apiConnector } from '../apiconnector'; 
+
+import {courseEndpoints } from '../apis';
+
 
 const {
-  // 🔹 Course Management
+
   CREATE_COURSE_API,
   GET_ALL_COURSE_API,           
   GET_COURSE_DETAILS_API,
@@ -11,12 +14,12 @@ const {
   DELETE_COURSE_API,
   INSTRUCTOR_COURSES_API,
   GET_FULL_COURSE_DETAILS,
-  // 🔹 Section
+
   CREATE_SECTION_API,               
   UPDATE_SECTION_API,              
   DELETE_SECTION_API ,            
 
-  // 🔹 Sub-Section
+
   CREATE_SUBSECTION_API,         
   UPDATE_SUBSECTION_API ,      
   DELETE_SUBSECTION_API ,   
@@ -52,7 +55,7 @@ export const fetchCourseCategories = async () => {
 
 
 
-// navigate  add krna hAI
+
 export const addCourseDetails = async (data, token, ) => {
   let result = null;
   const toastId = toast.loading("Loading...");
@@ -72,10 +75,9 @@ export const addCourseDetails = async (data, token, ) => {
     toast.success("Course Created Successfully!");
     result = response.data.course;
 
-    // 🔁 Redirect to Add Section page or course list
-    // navigate("/dashboard/my-courses");
+    
   } catch (error) {
-    console.log("CREATE COURSE API ERROR ❌", error);
+    console.log("CREATE COURSE API ERROR ", error);
     toast.error(error?.response?.data?.message || "Something went wrong");
   }
 
@@ -122,7 +124,7 @@ export const editCourseDetails = async (formData, token) => {
     }
 
     toast.success("Course updated successfully");
-    result = response.data.data; // this is updated course
+    result = response.data.data; 
   } catch (error) {
     console.error("EDIT COURSE ERROR:", error);
     toast.error(error?.response?.data?.message || "Could not update course");
@@ -144,7 +146,7 @@ export const getFullCourseDetails = async (courseId, token) => {
   try {
     const response = await apiConnector(
       "POST",
-      GET_FULL_COURSE_DETAILS, // ✅ correct constant
+      GET_FULL_COURSE_DETAILS, 
       { courseId },
       {
         Authorization: `Bearer ${token}`,
@@ -175,7 +177,7 @@ export const updateSection = async ({ sectionId, sectionName, courseId }, token)
   const toastId = toast.loading("Updating section...");
 
   try {
-    // 👉 backend expects all तीन fields body में
+   
     const payload = { sectionId, sectionName, courseId };
 
     const response = await apiConnector(
@@ -191,7 +193,6 @@ export const updateSection = async ({ sectionId, sectionName, courseId }, token)
 
     toast.success("Section updated successfully");
 
-    // controller भेजता है { success, message, course }
     return response.data.course;
   } catch (error) {
     console.error("UPDATE SECTION ERROR:", error);
@@ -204,7 +205,7 @@ export const updateSection = async ({ sectionId, sectionName, courseId }, token)
 
 
 
-// src/services/operations/courseAPI.js
+
 
 
 export const createSection = async ({ courseId, sectionName }, token) => {
@@ -212,7 +213,7 @@ export const createSection = async ({ courseId, sectionName }, token) => {
   try {
     const { data } = await apiConnector(
       "POST",
-      CREATE_SECTION_API,                // '/api/v1/course/addSection'
+      CREATE_SECTION_API,              
       { courseId, sectionName },
       { Authorization: `Bearer ${token}` }
     );
@@ -220,7 +221,7 @@ export const createSection = async ({ courseId, sectionName }, token) => {
     if (!data?.success) throw new Error(data?.message || "Failed");
 
     toast.success("Section added");
-    return data.course;                  // populated course
+    return data.course;                 
   } catch (err) {
     console.error("CREATE SECTION ERROR:", err);
     toast.error(err?.response?.data?.message || "Failed to create section");
@@ -246,7 +247,7 @@ export const deleteSection = async ({ sectionId, courseId }, token) => {
       throw new Error(response.data?.message || "Section deletion failed");
     }
 
-    return response.data.course; // Return updated course content
+    return response.data.course; 
   } catch (error) {
     console.error("❌ DELETE SECTION ERROR:", error);
     throw error;
@@ -333,7 +334,8 @@ export const updateSubSection = async (data, token) => {
     }
 
     toast.success("Lecture updated successfully");
-    result = response?.data?.updatedSection; // ✅ use correct key here
+    result = response?.data?.updatedSection;
+    
 
   } catch (error) {
     console.log("❌ UPDATE SUBSECTION ERROR:", error);
