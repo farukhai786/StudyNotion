@@ -58,7 +58,7 @@ export default function CourseReviewModal({ setReviewModal }) {
           </button>
         </div>
 
-        {/* User Info */}
+ 
         <div className="flex items-center gap-3 mb-4">
           <img src={user?.image} alt="profile" className="w-10 h-10 rounded-full object-cover" />
           <div>
@@ -71,7 +71,7 @@ export default function CourseReviewModal({ setReviewModal }) {
 
        
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Stars */}
+       
           <div className="mb-4 flex gap-1">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
@@ -110,7 +110,6 @@ export default function CourseReviewModal({ setReviewModal }) {
             value={rating}
           />
 
-          {/* Buttons */}
           <div className="flex justify-end gap-2 mt-6">
             <button
               type="button"
