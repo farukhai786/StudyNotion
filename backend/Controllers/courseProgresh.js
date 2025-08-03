@@ -1,5 +1,5 @@
-// controllers/courseProgress.js
-const CourseProgress = require("../Models/courseProgres"); // ✅ correct folder & spelling
+
+const CourseProgress = require("../Models/courseProgres"); 
 const SubSection = require("../Models/SubSection");
 const ExpressError = require("../Utils/ExpressError");
 
