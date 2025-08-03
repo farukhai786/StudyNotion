@@ -32,7 +32,7 @@ const ResetComplete = () => {
           onClick={() => navigate("/login")}
           className="text-sm text-gray-400 hover:text-white"
         >
-          ← Back to login
+          Back to login
         </button>
       </div>
     </div>
