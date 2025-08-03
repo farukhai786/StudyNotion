@@ -10,7 +10,7 @@ const ExpressError = require("../Utils/ExpressError");
 
 const { uploadToCloudinary } = require("../Utils/imageUploader");
 
-// Update Profile
+
 exports.updateProfile = (async (req, res) => {
   const { dateOfBirth = "", about = "", contactNumber, gender } = req.body;
   const { id } = req.user;
@@ -42,7 +42,7 @@ exports.updateProfile = (async (req, res) => {
   });
 });
 
-// Delete Account
+
 exports.deleteAccount = async (req, res) => {
   const userId = req.user.id;
   const user = await User.findById(userId);
@@ -59,7 +59,7 @@ exports.deleteAccount = async (req, res) => {
   });
 };
 
-// Get All User Details
+
 exports.getAllUserDetails = async (req, res) => {
   const userId = req.user.id;
   const user = await User.findById(userId).populate("additionalDetails").exec();
@@ -74,7 +74,6 @@ exports.getAllUserDetails = async (req, res) => {
   });
 };
 
-// Update Display Picture
 exports.updateDisplayPicture = async (req, res) => {
   const userId = req.user.id;
 
@@ -99,7 +98,7 @@ exports.updateDisplayPicture = async (req, res) => {
   });
 };
 
-// Get Enrolled Courses
+
 exports.getEnrolledCourses = async (req, res) => {
   const userId = req.user.id;
 
@@ -159,7 +158,7 @@ exports.getEnrolledCourses = async (req, res) => {
   });
 };
 
-// Instructor Dashboard
+
 exports.instructorDashboard = async (req, res) => {
   const courseDetails = await Course.find({ instructor: req.user.id });
 
