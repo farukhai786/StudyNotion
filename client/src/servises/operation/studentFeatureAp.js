@@ -83,7 +83,7 @@ handler: async (response) => {
   }
 }
 
-// ✅ Email Sender
+
 async function sendPaymentSuccessEmail(response, amount, token) {
   try {
     await apiConnector(
